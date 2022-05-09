@@ -2,7 +2,7 @@ class Game
   TOTAL_ERRORS_ALLOWED = 7
 
   def initialize(word)
-    @letters = word.chars
+    @letters = word.upcase.chars
     @user_guesses = []
   end
 
@@ -38,9 +38,9 @@ class Game
   end
 
   def normalize_letter(letter)
-    if letter.upcase == "Ё"
+    if letter == "Ё"
       "Е"
-    elsif letter.upcase == "Й"
+    elsif letter == "Й"
       "И"
     else
       letter
