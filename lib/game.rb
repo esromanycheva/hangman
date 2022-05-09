@@ -41,7 +41,7 @@ class Game
   end
 
   def normalized_letters
-    @letters.map { |letter| normalize_letter(letter)}
+    @letters.map { |letter| normalize_letter(letter) }
   end
 
   def play!(letter)
