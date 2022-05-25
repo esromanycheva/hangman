@@ -6,16 +6,14 @@ class ConsoleInterface
   end
 
   def print_out
-    puts <<~PRINT
-      Слово: #{word_to_show}
-      #{figure}
-      Ошибки: (#{@game.errors_made}): #{errors_to_show}
-      У Вас осталось ошибок: #{@game.errors_allowed}
-    PRINT
+    puts "Слово: #{word_to_show}".colorize(:color => :white, :background => :blue)
+    puts "#{figure}".colorize(:color => :green)
+    puts "Ошибки: (#{@game.errors_made}): #{errors_to_show}".colorize(:color => :yellow, :background => :red)
+    puts "У Вас осталось ошибок: #{@game.errors_allowed}"
 
     if @game.won?
       puts "Поздравляем, Вы выиграли!"
-    else
+    elsif @game.lost?
       puts "Вы проиграли, загаданное слово: #{@game.word}"
     end
   end
