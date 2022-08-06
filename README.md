@@ -15,10 +15,8 @@
 
 ```
 $ bundle
-$ ruby main.rb
+$ bundle exec ruby main.rb
 ```
 
 Изменение списка слов:
-```
-$ data/words.txt
-```
+` data/words.txt `
